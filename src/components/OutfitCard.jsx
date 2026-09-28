@@ -1,0 +1,66 @@
+import React from 'react';
+import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Badge } from './Badge';
+
+export const OutfitCard = ({
+  outfit,
+  onView,
+  actionText = "View Outfit →",
+  isHistory = false
+}) => {
+  return (
+    <div className="group bg-white rounded-xl overflow-hidden border border-taupe-200 hover:border-taupe-300 hover:shadow-card transition-all duration-300 flex flex-col">
+      <div className="relative aspect-[4/3] bg-taupe-100 overflow-hidden">
+        <img
+          src={outfit.image}
+          alt={outfit.name || outfit.outfitName}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        {outfit.number && (
+          <div className="absolute top-3 left-3 bg-charcoal-900 text-cream-50 text-[10px] font-bold tracking-widest px-2.5 py-1 rounded">
+            OUTFIT {outfit.number}
+          </div>
+        )}
+        {outfit.date && (
+          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-charcoal-800 text-xs font-semibold px-2.5 py-1 rounded shadow-sm">
+            {outfit.date}
+          </div>
+        )}
+      </div>
+
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <h4 className="editorial-heading text-lg font-semibold text-charcoal-900 group-hover:text-black">
+              {outfit.name || outfit.outfitName}
+            </h4>
+          </div>
+
+          <p className="text-xs text-charcoal-500 mb-3 leading-relaxed">
+            {outfit.itemsSummary || outfit.outfitSummary}
+          </p>
+
+          {/* Wardrobe Match status */}
+          <div className="flex items-center justify-between text-xs py-2 px-3 bg-taupe-50 rounded-lg border border-taupe-200/60 mb-4">
+            <span className="text-charcoal-600 font-medium">Wardrobe Match</span>
+            <div className="flex items-center gap-1.5 font-semibold text-charcoal-900">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              <span>
+                {outfit.wardrobeMatch || `${outfit.ownedCount} / ${outfit.totalCount} owned`}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          onClick={() => onView && onView(outfit)}
+          className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-[#FAF8F5] text-charcoal-900 text-xs font-semibold border border-taupe-300 hover:bg-charcoal-900 hover:text-white transition-all group-hover:border-charcoal-900"
+        >
+          <span>{actionText}</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
+    </div>
+  );
+};
