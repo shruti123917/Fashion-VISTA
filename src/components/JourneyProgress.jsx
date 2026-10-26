@@ -9,9 +9,8 @@ export const JourneyProgress = () => {
   const steps = [
     { path: '/stylist', label: 'AI Stylist', number: '01' },
     { path: '/recommendations', label: 'Occasion Ensemble', number: '02' },
-    { path: '/try-existing', label: 'Wardrobe Synergy', number: '03' },
-    { path: '/shop-new', label: 'Missing Item', number: '04', optional: true },
-    { path: '/analysis', label: 'Decision Analysis', number: '05' }
+    { path: '/shop-new', label: 'Missing Item', number: '03', optional: true },
+    { path: '/analysis', label: 'Decision Analysis', number: '04' }
   ];
 
   // Only display on workflow routes

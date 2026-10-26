@@ -69,7 +69,6 @@ Instead of pushing endless new garments, Fashion VISTA catalogs your existing wa
 | `/stylist` | **AI Stylist** | Interactive 6-step questionnaire (`01/06` progress): Occasion, Outfit Type, Colour, Style, Season, Budget. |
 | `/recommendations` | **Recommendations** | Visual showcase of "Urban Casual", 4 outfit pieces with In-Wardrobe/Missing status, 75% Wardrobe Match bar, Why This Outfit reasoning, and 3 alternatives. |
 | `/wardrobe` | **My Wardrobe** | Virtual closet inventory (24+ items), category filtering, search, Add Clothing modal with file upload/presets, and Edit/Delete controls. |
-| `/try-existing` | **Try Existing** | Category slot selector (`Top`, `Bottom`, `Shoes`, `Layer`) for matching owned pieces to recommended blueprint. |
 | `/shop-new` | **Shop New** | Missing item uploader. Allows drag-and-drop screenshots of desired product from Myntra/Zara without carts or commerce. |
 | `/try-on/upload` | **Upload User Photo** | Dedicated photo upload area with full-body criteria checklist, local preview, and demo sample toggle. |
 | `/try-on` | **Virtual Try-On** | Editorial split-screen interface (Your Photo vs Try-On Preview) with honest ML model pending notice and outfit element summary. |

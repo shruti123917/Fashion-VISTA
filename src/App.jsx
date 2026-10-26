@@ -17,7 +17,6 @@ import { Home } from './pages/Home';
 import { Stylist } from './pages/Stylist';
 import { Wardrobe } from './pages/Wardrobe';
 import { Recommendations } from './pages/Recommendations';
-import { TryExisting } from './pages/TryExisting';
 import { ShopNew } from './pages/ShopNew';
 import { UploadUserPhoto } from './pages/UploadUserPhoto';
 import { VirtualTryOn } from './pages/VirtualTryOn';
@@ -79,7 +78,7 @@ function MainAppContent() {
               <Route path="/stylist" element={<Stylist />} />
               <Route path="/wardrobe" element={<Wardrobe />} />
               <Route path="/recommendations" element={<Recommendations />} />
-              <Route path="/try-existing" element={<TryExisting />} />
+              <Route path="/try-existing" element={<Navigate to="/recommendations" replace />} />
               <Route path="/shop-new" element={<ShopNew />} />
               <Route path="/try-on/upload" element={<Navigate to="/recommendations" replace />} />
               <Route path="/try-on" element={<Navigate to="/recommendations" replace />} />

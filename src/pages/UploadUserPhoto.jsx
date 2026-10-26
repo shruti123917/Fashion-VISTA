@@ -124,7 +124,7 @@ export const UploadUserPhoto = () => {
           <Button
             variant="ghost"
             size="md"
-            onClick={() => navigate('/try-existing')}
+            onClick={() => navigate('/recommendations')}
           >
             ← Back
           </Button>

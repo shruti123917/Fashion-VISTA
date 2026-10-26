@@ -20,7 +20,6 @@ export const Navbar = () => {
     { to: '/stylist', label: 'AI Stylist' },
     { to: '/wardrobe', label: 'My Wardrobe' },
     { to: '/recommendations', label: 'Occasion Stylist' },
-    { to: '/try-existing', label: 'Try What I Own' },
     { to: '/history', label: 'History' },
   ];
 

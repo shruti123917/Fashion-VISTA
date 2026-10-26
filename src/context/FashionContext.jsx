@@ -370,25 +370,6 @@ export const FashionProvider = ({ children }) => {
     setAllOutfits(prev => (prev || []).map(o => matchOutfitWithWardrobe(o, wardrobe)));
   }, [wardrobe]);
 
-  // 4. Try Existing selections (by slot: top, bottom, shoes, layer)
-  const [tryExistingSelection, setTryExistingSelection] = useState(() => {
-    try {
-      const saved = localStorage.getItem('fashion_vista_try_existing');
-      return saved ? JSON.parse(saved) : {
-        top: null,
-        bottom: null,
-        shoes: null,
-        layer: null
-      };
-    } catch {
-      return { top: null, bottom: null, shoes: null, layer: null };
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem('fashion_vista_try_existing', JSON.stringify(tryExistingSelection));
-  }, [tryExistingSelection]);
-
   // 5. User full-body photo for Virtual Try-On
   const defaultUserPhoto = "/user_indian_portrait.jpg";
   const [userPhoto, setUserPhotoState] = useState(() => {
@@ -598,13 +579,6 @@ export const FashionProvider = ({ children }) => {
     } catch (err) {
       console.warn('Backend SQLite update error:', err.message);
     }
-  };
-
-  const selectTryExistingItem = (slot, itemId) => {
-    setTryExistingSelection(prev => ({
-      ...prev,
-      [slot]: prev[slot] === itemId ? null : itemId
-    }));
   };
 
   // Generate dynamic recommendation matching user choices
@@ -972,8 +946,6 @@ export const FashionProvider = ({ children }) => {
         selectOutfitByIndex,
         generateRecommendation,
         applyAlternative,
-        tryExistingSelection,
-        selectTryExistingItem,
         userPhoto,
         setUserPhoto,
         missingItemPhoto,

@@ -42,7 +42,6 @@ export const Footer = () => {
               <li><Link to="/stylist" className="hover:text-black transition-colors">AI Stylist Multi-Step</Link></li>
               <li><Link to="/recommendations" className="hover:text-black transition-colors">360° Occasion Stylist</Link></li>
               <li><Link to="/wardrobe" className="hover:text-black transition-colors">Virtual Wardrobe</Link></li>
-              <li><Link to="/try-existing" className="hover:text-black transition-colors">Try Existing Pieces</Link></li>
               <li><Link to="/shop-new" className="hover:text-black transition-colors">Shop Missing Item</Link></li>
             </ul>
           </div>
